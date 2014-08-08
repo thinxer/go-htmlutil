@@ -36,7 +36,7 @@ func Create(tag string) *html.Node {
 	} else {
 		s = fmt.Sprintf("<%s></%s>", tag, tag)
 	}
-	fragments, err := html.ParseFragment(strings.NewReader(s), bodyContext)
+	fragments, err := html.ParseFragment(strings.NewReader(s), BodyContext)
 	if err != nil {
 		return nil
 	}
@@ -54,9 +54,10 @@ func Replace(original, repl *html.Node) {
 	original.Parent.RemoveChild(original)
 }
 
-var bodyContext *html.Node
+// BodyContext can be used as the context when parsing fragments.
+var BodyContext *html.Node
 
 func init() {
 	doc, _ := html.Parse(strings.NewReader(`<html><body></body></html>`))
-	bodyContext = FindOne(doc, atom.Body)
+	BodyContext = FindOne(doc, atom.Body)
 }
