@@ -20,3 +20,14 @@ func SetAttr(n *html.Node, name, val string) {
 	}
 	n.Attr = append(n.Attr, html.Attribute{Key: name, Val: val})
 }
+
+func DelAttr(n *html.Node, name string) {
+	i := 0
+	for j := range n.Attr {
+		if n.Attr[j].Key != name {
+			n.Attr[i] = n.Attr[j]
+			i++
+		}
+	}
+	n.Attr = n.Attr[:i]
+}
