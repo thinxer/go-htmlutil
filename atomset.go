@@ -45,7 +45,7 @@ func (s AtomSet) HasName(name []byte) bool {
 
 var (
 	Codes      = NewAtomSetFromString("style script link")
-	Blocks     = NewAtomSetFromString("address article aside audio blockquote br canvas dd div dl fieldset figcaption figure figcaption footer form h1 h2 h3 h4 h5 h6 header hgroup hr noscript ol output p pre section table tfoot ul video")
+	Blocks     = NewAtomSetFromString("address article aside audio blockquote canvas dd div dl fieldset figcaption figure figcaption footer form h1 h2 h3 h4 h5 h6 header hgroup hr noscript ol output p pre section table tfoot ul video")
 	Containers = NewAtomSetFromString("article aside div footer header hgroup section")
 	Headers    = NewAtomSetFromString("h1 h2 h3 h4 h5 h6 h7")
 	Voids      = NewAtomSetFromString("area base br col embed hr img input keygen link meta param source track wbr")
