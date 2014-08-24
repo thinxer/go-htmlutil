@@ -23,10 +23,11 @@ func Lift(n *html.Node) {
 	Drop(n)
 }
 
-func Drop(n *html.Node) {
+func Drop(n *html.Node) *html.Node {
 	if n.Parent != nil {
 		n.Parent.RemoveChild(n)
 	}
+	return n
 }
 
 func Create(tag string) *html.Node {
