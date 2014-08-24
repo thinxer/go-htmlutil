@@ -1,7 +1,6 @@
 package htmlutil
 
 import (
-	"fmt"
 	"strings"
 
 	"code.google.com/p/go.net/html"
@@ -31,17 +30,11 @@ func Drop(n *html.Node) *html.Node {
 }
 
 func Create(tag string) *html.Node {
-	var s string
-	if Voids.HasName([]byte(tag)) {
-		s = "<" + tag + ">"
-	} else {
-		s = fmt.Sprintf("<%s></%s>", tag, tag)
+	return &html.Node{
+		Type:     html.ElementNode,
+		DataAtom: atom.Lookup([]byte(tag)),
+		Data:     tag,
 	}
-	fragments, err := html.ParseFragment(strings.NewReader(s), BodyContext)
-	if err != nil {
-		return nil
-	}
-	return fragments[0]
 }
 
 func Replace(original, repl *html.Node) {
