@@ -5,10 +5,10 @@ import (
 	"bytes"
 	"io"
 
-	"code.google.com/p/go.net/html"
-	"code.google.com/p/go.net/html/atom"
-	"code.google.com/p/go.net/html/charset"
-	"code.google.com/p/go.text/transform"
+	"golang.org/x/net/html"
+	"golang.org/x/net/html/atom"
+	"golang.org/x/net/html/charset"
+	"golang.org/x/text/transform"
 )
 
 // Clean and parse the HTML, so that:

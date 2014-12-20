@@ -1,8 +1,8 @@
 package htmlutil
 
 import (
-	"code.google.com/p/go.net/html"
-	"code.google.com/p/go.net/html/atom"
+	"golang.org/x/net/html"
+	"golang.org/x/net/html/atom"
 )
 
 func Walk(n *html.Node, before, after func(*html.Node)) {

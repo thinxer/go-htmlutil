@@ -3,7 +3,7 @@ package htmlutil
 import (
 	"strings"
 
-	"code.google.com/p/go.net/html/atom"
+	"golang.org/x/net/html/atom"
 )
 
 type AtomSet map[atom.Atom]struct{}

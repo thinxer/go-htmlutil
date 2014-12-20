@@ -1,6 +1,6 @@
 package htmlutil
 
-import "code.google.com/p/go.net/html"
+import "golang.org/x/net/html"
 
 func GetAttr(n *html.Node, name string) string {
 	for _, attr := range n.Attr {
